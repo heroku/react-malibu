@@ -1,0 +1,14 @@
+{
+  "name": "react-malibu",
+  "version": "1.0.0",
+  "description": "React components for Heroku's Malibu sprite system",
+  "main": "index.js",
+  "repository": "https://github.com/heroku/react-malibu",
+  "author": "Idan Gazit <idan@heroku.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-svg-inline": "1.2.0"
+  }
+}
