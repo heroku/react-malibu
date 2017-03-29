@@ -1,6 +1,6 @@
 {
   "name": "react-malibu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React components for Heroku's Malibu sprite system",
   "main": "index.js",
   "repository": "https://github.com/heroku/react-malibu",
