@@ -8,13 +8,15 @@ React components for using the [Malibu SVG spritesheet](https://github.com/herok
 
 You'll need to update your webpack configuration's `loaders`:
 
-loaders: [
+```js
+rules: [
   // all your other loaders…
   {
     test: /\.svg$/,
     loader: 'raw-loader'
   }
 ]
+```
 
 ## Usage
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import SVGInline from 'react-svg-inline'
-import sprites from './sprite.svg'
+import sprites from 'raw-loader!./sprite.svg'
 
 export default () => {
-  <SVGInline svg={ sprites }/>
+  <SVGInline svg={ sprites } />
 }
