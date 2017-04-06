@@ -18,7 +18,13 @@ React components for using the [Malibu SVG spritesheet](https://github.com/herok
 
 ## Setup
 
-TBD
+1. `yarn install @heroku/react-malibu`
+2. `import { MalibuSprites, MalibuIcon } from 'react-malibu'`
+3. Profit!
+
+## Development
+
+Clone the repo, then `yarn install`. If you want to see the demo server, run `yarn start` and visit http://localhost:3000 to browse the icons.
 
 ## Usage
 
