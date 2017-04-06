@@ -34,7 +34,7 @@
   },
   "author": "Idan Gazit <idan@heroku.com>",
   "homepage": "https://github.com/heroku/react-malibu",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE.txt",
   "keywords": [
     "react-component"
   ]
