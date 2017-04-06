@@ -1,5 +1,5 @@
 {
-  "name": "react-malibu",
+  "name": "@heroku/react-malibu",
   "version": "1.0.0",
   "description": "React components for Heroku's Malibu SVG icon system",
   "main": "lib/index.js",
