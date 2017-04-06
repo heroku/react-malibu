@@ -19,7 +19,7 @@ React components for using the [Malibu SVG spritesheet](https://github.com/herok
 ## Setup
 
 1. `yarn add @heroku/react-malibu`
-2. `import { MalibuSprites, MalibuIcon } from 'react-malibu'`
+2. `import { MalibuSprites, MalibuIcon } from '@heroku/react-malibu'`
 3. Profit!
 
 ## Development
