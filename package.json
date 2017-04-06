@@ -1,15 +1,41 @@
 {
   "name": "react-malibu",
-  "version": "1.0.1",
-  "description": "React components for Heroku's Malibu sprite system",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "React components for Heroku's Malibu SVG icon system",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "repository": "https://github.com/heroku/react-malibu",
-  "author": "Idan Gazit <idan@heroku.com>",
-  "license": "MIT",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && npm clean-demo",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
   "dependencies": {
-    "raw-loader": "0.5.1",
-    "react": "15.4.2",
-    "react-dom": "15.4.2",
-    "react-svg-inline": "1.2.0"
-  }
+    "react-svg-inline": "1.2.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "peerDependencies": {
+    "react": "15.x",
+    "react-dom": "15.x"
+  },
+  "devDependencies": {
+    "nwb": "0.15.x",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "author": "Idan Gazit <idan@heroku.com>",
+  "homepage": "https://github.com/heroku/react-malibu",
+  "license": "MIT",
+  "keywords": [
+    "react-component"
+  ]
 }
