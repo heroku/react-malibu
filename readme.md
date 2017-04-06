@@ -26,6 +26,10 @@ React components for using the [Malibu SVG spritesheet](https://github.com/herok
 
 Clone the repo, then `yarn install`. If you want to see the demo server, run `yarn start` and visit http://localhost:3000 to browse the icons.
 
+You cannot currently publish to NPM using yarn, because [there are bugs](https://github.com/yarnpkg/yarn/issues/754).
+
+See more in CONTRIBUTING.md.
+
 ## Usage
 
 This package offers two components: `<MalibuSprites>` and `<MalibuIcon>`.
