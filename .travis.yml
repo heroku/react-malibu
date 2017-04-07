@@ -4,7 +4,8 @@ language: node_js
 node_js:
   - 7
 
-cache: yarn
+cache:
+  yarn: true
 
 branches:
   only:
