@@ -15,6 +15,8 @@ React components for using the [Malibu SVG spritesheet](https://github.com/herok
 [coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/user/repo
 
+[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 
 ## Setup
 

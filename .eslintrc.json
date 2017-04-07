@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "plugin:react/recommended"],
+  "plugins": [
+      "standard",
+      "promise",
+      "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "classes": true
+    }
+  },
+  "rules": {
+    "comma-dangle": ["off", "always-multiline"]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  }
+}
