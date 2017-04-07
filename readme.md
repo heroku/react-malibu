@@ -41,7 +41,7 @@ Put this component on your page only once, it fetches and displays the entire sp
 Use this component to instantiate an icon.
 
 ```js
-<MalibuIcon name='add-badge-16' size={20} fillClass='dark-gray' />
+<MalibuIcon name='add-badge-16' size={20} fillClass='dark-gray' extraClasses='foo bar baz'/>
 ```
 
 ##### Properties
@@ -55,3 +55,4 @@ Use this component to instantiate an icon.
   - `orange`
   - `green`
   - `blue`
+* **`extraClasses`** (optional): a string containing space-separated classnames to apply to the rendered `<svg>` element.

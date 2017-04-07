@@ -17,6 +17,15 @@ describe('MalibuIcon', () => {
     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
   })
 
+  it('correctly applies extra classes', () => {
+    const wrapper = shallow(<MalibuIcon name='foo' extraClasses='v-mid'/>)
+    expect(wrapper).to.not.have.prop('style')
+    expect(wrapper).to.have.className('malibu-fill-gradient-purple')
+    expect(wrapper).to.have.className('v-mid')
+    expect(wrapper.find('use')).to.be.present()
+    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+  })
+
   it('displays a colored icon', () => {
     const wrapper = shallow(<MalibuIcon name='foo' fillClass='blue'/>)
     expect(wrapper).to.not.have.prop('style')
