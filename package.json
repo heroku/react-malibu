@@ -1,6 +1,6 @@
 {
   "name": "@heroku/react-malibu",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "React components for Heroku's Malibu SVG icon system",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -15,9 +15,7 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && npm clean-demo",
     "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server",
+    "test": "yarn run lint && yarn run mocha -- --require jsdom-global/register --require babel-register tests/*_test.js",
     "lint": "yarn run eslint ."
   },
   "dependencies": {
@@ -29,22 +27,38 @@
     "react-dom": "15.x"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.6.1",
+    "enzyme": "^2.8.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.0",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-mocha": "^4.9.0",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.3",
     "eslint-plugin-standard": "^3.0.1",
+    "fetch-mock": "^5.9.4",
+    "jsdom": "^9.12.0",
+    "jsdom-global": "^2.1.1",
+    "mocha": "^3.2.0",
     "nwb": "0.15.x",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "sinon": "^2.1.0"
   },
   "author": "Idan Gazit <idan@heroku.com>",
   "homepage": "https://github.com/heroku/react-malibu",
   "license": "SEE LICENSE IN LICENSE.txt",
   "keywords": [
     "react-component"
-  ]
+  ],
+  "babel": {
+    "presets": ["es2015", "stage-0", "react"]
+  }
 }

@@ -4,7 +4,8 @@
   "plugins": [
       "standard",
       "promise",
-      "react"
+      "react",
+      "mocha"
   ],
   "parserOptions": {
     "ecmaFeatures": {
