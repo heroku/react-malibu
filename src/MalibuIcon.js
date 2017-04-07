@@ -20,10 +20,12 @@ export default class MalibuIcon extends React.Component {
 
   render () {
     const { fillClass, name, size } = this.props
-    const style = {}
+    let style
     if (size) {
-      style.width = `${size}px`
-      style.height = `${size}px`
+      style = {
+        width: `${size}px`,
+        height: `${size}px`,
+      }
     }
     return (
       <svg style={style} className={`malibu-fill-gradient-${fillClass}`}><use xlinkHref={`#${name}`}></use></svg>
