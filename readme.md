@@ -4,16 +4,12 @@ React components for using the [Malibu SVG spritesheet](https://github.com/herok
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+[build-badge]: https://img.shields.io/travis/heroku/react-malibu/master.png?style=flat-square
+[build]: https://travis-ci.org/heroku/react-malibu
 
 [npm-badge]: https://img.shields.io/npm/v/@heroku/react-malibu.png?style=flat-square
 [npm]: https://www.npmjs.org/package/@heroku/react-malibu
-
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
