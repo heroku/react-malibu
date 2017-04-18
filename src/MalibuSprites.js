@@ -4,11 +4,13 @@ import 'whatwg-fetch'
 
 export default class MalibuSprites extends React.Component {
   static propTypes = {
+    handleUpdate: PropTypes.func,
     version: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
-    version: 'latest'
+    handleUpdate: () => {},
+    version: 'latest',
   }
 
   state = {
@@ -18,6 +20,10 @@ export default class MalibuSprites extends React.Component {
 
   componentDidMount () {
     this.fetchSprites()
+  }
+
+  componentDidUpdate () {
+    this.props.handleUpdate()
   }
 
   fetchSprites = () => {
@@ -43,6 +49,6 @@ export default class MalibuSprites extends React.Component {
 
   render () {
     const { sprites } = this.state
-    return (<SVGInline svg={sprites} />)
+    return (<SVGInline svg={sprites}/>)
   }
 }

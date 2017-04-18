@@ -45,6 +45,7 @@
     "fetch-mock": "^5.9.4",
     "jsdom": "^9.12.0",
     "jsdom-global": "^2.1.1",
+    "lodash.difference": "^4.5.0",
     "mocha": "^3.2.0",
     "nwb": "0.15.x",
     "react": "^15.4.2",
@@ -59,6 +60,10 @@
     "react-component"
   ],
   "babel": {
-    "presets": ["es2015", "stage-0", "react"]
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ]
   }
 }
