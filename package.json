@@ -19,6 +19,7 @@
     "lint": "yarn run eslint ."
   },
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react-svg-inline": "1.2.0",
     "whatwg-fetch": "^2.0.3"
   },
