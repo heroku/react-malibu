@@ -5126,7 +5126,7 @@ promise@7.1.1, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10:
+prop-types@^15.5.10, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -5281,11 +5281,12 @@ react-proxy@^1.1.7:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
 
-react-svg-inline@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-svg-inline/-/react-svg-inline-1.2.0.tgz#a02bf81a0ed7615e3194a014b58d98aea5521fd5"
+react-svg-inline@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-svg-inline/-/react-svg-inline-2.0.0.tgz#0a4f60895588eecc7616af3a511d087801163600"
   dependencies:
     classnames "^2.2.1"
+    prop-types "^15.5.8"
 
 react-transform-catch-errors@1.0.2:
   version "1.0.2"

@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "prop-types": "^15.5.10",
-    "react-svg-inline": "1.2.0",
+    "react-svg-inline": "^2.0.0",
     "whatwg-fetch": "^2.0.3"
   },
   "peerDependencies": {
