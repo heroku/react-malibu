@@ -48,6 +48,7 @@
     "jsdom-global": "^2.1.1",
     "lodash.difference": "^4.5.0",
     "mocha": "^3.2.0",
+    "np": "^2.16.0",
     "nwb": "0.15.x",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
