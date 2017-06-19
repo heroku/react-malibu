@@ -29,8 +29,15 @@ export default class MalibuIcon extends React.Component {
         height: `${size}px`,
       }
     }
+
+    let classNames = `malibu-fill-gradient-${fillClass}`
+
+    if (extraClasses) {
+      classNames += ` ${extraClasses}`
+    }
+
     return (
-      <svg style={style} className={`malibu-fill-gradient-${fillClass} ${extraClasses}`}><use xlinkHref={`#${name}`}></use></svg>
+      <svg style={style} className={classNames}><use xlinkHref={`#${name}`}></use></svg>
     )
   }
 }

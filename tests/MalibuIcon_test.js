@@ -13,6 +13,7 @@ describe('MalibuIcon', () => {
     const wrapper = shallow(<MalibuIcon name='foo' />)
     expect(wrapper).to.not.have.prop('style')
     expect(wrapper).to.have.className('malibu-fill-gradient-purple')
+    expect(wrapper).not.to.have.className('undefined')
     expect(wrapper.find('use')).to.be.present()
     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
   })
