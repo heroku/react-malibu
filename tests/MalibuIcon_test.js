@@ -27,10 +27,18 @@ describe('MalibuIcon', () => {
     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
   })
 
-  it('displays a colored icon', () => {
+  it('displays a gradient fillClass icon', () => {
     const wrapper = shallow(<MalibuIcon name='foo' fillClass='blue'/>)
     expect(wrapper).to.not.have.prop('style')
     expect(wrapper).to.have.className('malibu-fill-gradient-blue')
+    expect(wrapper.find('use')).to.be.present()
+    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+  })
+
+  it('displays a purple fillClass icon', () => {
+    const wrapper = shallow(<MalibuIcon name='foo' fillClass='fill-washed-blue'/>)
+    expect(wrapper).to.not.have.prop('style')
+    expect(wrapper).to.have.className('fill-washed-blue')
     expect(wrapper.find('use')).to.be.present()
     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
   })
