@@ -21,6 +21,7 @@
     "release": "np"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "prop-types": "^15.5.10",
     "react-svg-inline": "^2.0.0",
     "whatwg-fetch": "^2.0.3"
@@ -32,7 +33,6 @@
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.1",
-    "babel-polyfill": "^6.23.0",
     "babel-register": "^6.24.0",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.1",
