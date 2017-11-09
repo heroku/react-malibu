@@ -3,15 +3,20 @@ import PropTypes from 'prop-types'
 import SVGInline from 'react-svg-inline'
 import 'whatwg-fetch'
 
+const alternativeSpriteSets = [
+  'marketing'
+]
+
 export default class MalibuSprites extends React.Component {
   static propTypes = {
     handleUpdate: PropTypes.func,
-    version: PropTypes.string.isRequired,
+    version: PropTypes.string.isRequired, 
+    set: PropTypes.oneOf(alternativeSpriteSets)
   }
 
   static defaultProps = {
     handleUpdate: () => {},
-    version: 'latest',
+    version: 'latest'
   }
 
   state = {
@@ -28,8 +33,10 @@ export default class MalibuSprites extends React.Component {
   }
 
   fetchSprites = () => {
-    const { version } = this.props
-    fetch(`https://www.herokucdn.com/malibu/${version}/sprite.svg`)
+    const { version, set } = this.props
+    const file = set ? `${set}/sprite.svg` : 'sprite.svg'
+
+    fetch(`https://www.herokucdn.com/malibu/${version}/${file}`)
       .then((res) => (res.text()))
       .then((sprites) => {
         this.setState({
