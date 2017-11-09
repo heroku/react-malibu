@@ -37,6 +37,12 @@ This package offers two components: `<MalibuSprites>` and `<MalibuIcon>`.
 
 Put this component on your page only once, it fetches and displays the entire spritesheet.
 
+By default this will load the product sprites. To load the marketing sprites, add the `set` property.
+
+```js
+<MalibuSprites set='marketing'/>
+```
+
 #### `<MalibuIcon>`
 
 Use this component to instantiate an icon.

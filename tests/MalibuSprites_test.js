@@ -26,10 +26,22 @@ describe('MalibuSprite', () => {
     expect(fetchMock.lastUrl()).to.equal(url)
   })
 
+  it('fetches different sprites when set is provided', () => {
+    const set = 'marketing'
+    const url = `https://www.herokucdn.com/malibu/latest/${set}/sprite.svg`
+    fetchMock.get(url, sprites)
+    mount(<MalibuSprites set={set} />)
+    expect(fetchMock.lastUrl()).to.equal(url)
+  })
+
   it('correctly sets the content of sprites when fetched', () => {
     const wrapper = shallow(<MalibuSprites />)
     wrapper.setState({sprites})
     wrapper.update()
     expect(wrapper.props().svg).to.equal(sprites)
+  })
+
+  it('does not permit arbitrary set values', () => {
+    expect(() => (shallow(<MalibuSprites name='foo' set='WRONG'/>))).to.throw()
   })
 })
