@@ -40,7 +40,7 @@ if (!Array.prototype.includes) {
         if (sameValueZero(o[k], searchElement)) {
           return true
         }
-        // c. Increase k by 1. 
+        // c. Increase k by 1.
         k++
       }
 
@@ -59,8 +59,8 @@ if (!Array.from) {
     }
     var toInteger = function (value) {
       var number = Number(value)
-      if (isNaN(number)) { return 0; }
-      if (number === 0 || !isFinite(number)) { return number; }
+      if (isNaN(number)) { return 0 }
+      if (number === 0 || !isFinite(number)) { return number }
       return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number))
     }
     var maxSafeInteger = Math.pow(2, 53) - 1
@@ -103,7 +103,7 @@ if (!Array.from) {
       var len = toLength(items.length)
 
       // 13. If IsConstructor(C) is true, then
-      // 13. a. Let A be the result of calling the [[Construct]] internal method 
+      // 13. a. Let A be the result of calling the [[Construct]] internal method
       // of C with an argument list containing the single item len.
       // 14. a. Else, Let A be ArrayCreate(len).
       var A = isCallable(C) ? Object(new C(len)) : new Array(len)
