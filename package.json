@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.2",
     "react-svg-inline": "^2.0.0",
     "whatwg-fetch": "^2.0.3"
   },
@@ -52,9 +52,9 @@
     "mocha": "^3.2.0",
     "np": "^2.16.0",
     "nwb": "^0.18.8",
-    "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.6.3",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.6.3",
     "sinon": "^2.1.0"
   },
   "author": "Idan Gazit <idan@heroku.com>",
