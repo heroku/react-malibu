@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.2",
     "react-svg-inline": "^2.0.0",
     "whatwg-fetch": "^2.0.3"
   },
@@ -35,8 +35,9 @@
     "babel-eslint": "^7.2.1",
     "babel-register": "^6.24.0",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.6.1",
-    "enzyme": "^2.8.0",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.0",
     "eslint-plugin-import": "^2.2.0",
@@ -52,9 +53,9 @@
     "mocha": "^3.2.0",
     "np": "^2.16.0",
     "nwb": "^0.18.8",
-    "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.6.3",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.6.3",
     "sinon": "^2.1.0"
   },
   "author": "Idan Gazit <idan@heroku.com>",
