@@ -8,6 +8,8 @@ const alternativeSpriteSets = [
 ]
 
 export default class MalibuSprites extends React.Component {
+  static displayName = 'MalibuSprites'
+
   static propTypes = {
     handleUpdate: PropTypes.func,
     version: PropTypes.string.isRequired,

@@ -52,6 +52,8 @@ const purpleGradientFillClasses = [
 ]
 
 export default class MalibuIcon extends React.Component {
+  static displayName = 'MalibuIcon'
+
   static propTypes = {
     extraClasses: PropTypes.string,
     fillClass: PropTypes.oneOf(purpleGradientFillClasses.concat(purpleFillClasses)),
