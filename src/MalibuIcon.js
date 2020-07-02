@@ -87,7 +87,7 @@ export default class MalibuIcon extends React.Component {
     }
 
     return (
-      <svg style={style} className={classNames}><use xlinkHref={`#${name}`}></use></svg>
+      <svg style={style} className={classNames}><use href={`#${name}`}></use></svg>
     )
   }
 }
