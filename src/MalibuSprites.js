@@ -48,10 +48,12 @@ export default class MalibuSprites extends React.Component {
     fetch(`https://www.herokucdn.com/malibu/${version}/${file}`)
       .then((res) => (res.text()))
       .then((sprites) => {
-        if (this._isMounted) this.setState({
-          fetchTries: 0,
-          sprites,
-        })
+        if (this._isMounted) {
+          this.setState({
+            fetchTries: 0,
+            sprites,
+          })
+      }
       })
       .catch((err) => {
         if (!this._isMounted) return
@@ -70,4 +72,3 @@ export default class MalibuSprites extends React.Component {
     return (<SVGInline svg={sprites}/>)
   }
 }
-
