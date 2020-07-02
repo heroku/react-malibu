@@ -21,13 +21,20 @@ export default class MalibuSprites extends React.Component {
     version: 'latest'
   }
 
+  _isMounted = false
+
   state = {
     fetchTries: 0,
     sprites: '',
   }
 
   componentDidMount () {
+    this._isMounted = true
     this.fetchSprites()
+  }
+
+  componentWillUnmount () {
+    this._isMounted = false
   }
 
   componentDidUpdate () {
@@ -41,16 +48,17 @@ export default class MalibuSprites extends React.Component {
     fetch(`https://www.herokucdn.com/malibu/${version}/${file}`)
       .then((res) => (res.text()))
       .then((sprites) => {
-        this.setState({
+        if (this._isMounted) this.setState({
           fetchTries: 0,
           sprites,
         })
       })
       .catch((err) => {
+        if (!this._isMounted) return
         // Retry with exponential backoff
         let { fetchTries } = this.state
         fetchTries += 1
-        this.setState({fetchTries})
+        this.setState({ fetchTries })
         const fetchDelaySeconds = 2 ** fetchTries
         console.warn(`Error when fetching Malibu sprites, retrying in ${2 ** fetchTries}`, err)
         setTimeout(this.fetchSprites, fetchDelaySeconds ** 1000)
@@ -62,3 +70,4 @@ export default class MalibuSprites extends React.Component {
     return (<SVGInline svg={sprites}/>)
   }
 }
+
