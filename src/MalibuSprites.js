@@ -23,8 +23,9 @@ export default class MalibuSprites extends React.Component {
 
   _isMounted = false
 
+  fetchTries = 0
+
   state = {
-    fetchTries: 0,
     sprites: '',
   }
 
@@ -49,21 +50,23 @@ export default class MalibuSprites extends React.Component {
       .then((res) => (res.text()))
       .then((sprites) => {
         if (this._isMounted) {
+          this.fetchTries = 0
           this.setState({
-            fetchTries: 0,
             sprites,
           })
         }
       })
       .catch((err) => {
         if (!this._isMounted) return
+        if (this.fetchTries >= 5) {
+          console.warn('Malibu sprites could not be fetched within 5 tries', err)
+          return
+        }
         // Retry with exponential backoff
-        let { fetchTries } = this.state
-        fetchTries += 1
-        this.setState({ fetchTries })
-        const fetchDelaySeconds = 2 ** fetchTries
-        console.warn(`Error when fetching Malibu sprites, retrying in ${2 ** fetchTries}`, err)
-        setTimeout(this.fetchSprites, fetchDelaySeconds ** 1000)
+        this.fetchTries += 1
+        const fetchDelaySeconds = 2 ** this.fetchTries
+        console.warn(`Error when fetching Malibu sprites, retrying in ${fetchDelaySeconds}s`, err)
+        setTimeout(this.fetchSprites, fetchDelaySeconds * 1000)
       })
   }
 
