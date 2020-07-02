@@ -53,7 +53,7 @@ export default class MalibuSprites extends React.Component {
             fetchTries: 0,
             sprites,
           })
-      }
+        }
       })
       .catch((err) => {
         if (!this._isMounted) return
