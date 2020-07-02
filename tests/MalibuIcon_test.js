@@ -15,7 +15,7 @@ describe('MalibuIcon', () => {
     expect(wrapper).to.have.className('malibu-fill-gradient-purple')
     expect(wrapper).not.to.have.className('undefined')
     expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+    expect(wrapper.find('use')).to.have.prop('href').equal('#foo')
   })
 
   it('correctly applies extra classes', () => {
@@ -24,7 +24,7 @@ describe('MalibuIcon', () => {
     expect(wrapper).to.have.className('malibu-fill-gradient-purple')
     expect(wrapper).to.have.className('v-mid')
     expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+    expect(wrapper.find('use')).to.have.prop('href').equal('#foo')
   })
 
   it('displays a gradient fillClass icon', () => {
@@ -32,7 +32,7 @@ describe('MalibuIcon', () => {
     expect(wrapper).to.not.have.prop('style')
     expect(wrapper).to.have.className('malibu-fill-gradient-blue')
     expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+    expect(wrapper.find('use')).to.have.prop('href').equal('#foo')
   })
 
   it('displays a purple fillClass icon', () => {
@@ -40,7 +40,7 @@ describe('MalibuIcon', () => {
     expect(wrapper).to.not.have.prop('style')
     expect(wrapper).to.have.className('fill-washed-blue')
     expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+    expect(wrapper.find('use')).to.have.prop('href').equal('#foo')
   })
 
   it('displays a custom-sized icon', () => {
@@ -48,7 +48,7 @@ describe('MalibuIcon', () => {
     expect(wrapper.prop('style')).to.deep.equal({width: '333px', height: '333px'})
     expect(wrapper).to.have.className('malibu-fill-gradient-blue')
     expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+    expect(wrapper.find('use')).to.have.prop('href').equal('#foo')
   })
 
   it('does not permit arbitrary fillClass values', () => {
