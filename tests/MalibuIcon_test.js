@@ -11,7 +11,6 @@ chai.use(chaiEnzyme())
 describe('MalibuIcon', () => {
   it('displays a natively-sized icon', () => {
     const wrapper = shallow(<MalibuIcon name='foo' />)
-    expect(wrapper).to.not.have.prop('style')
     expect(wrapper).to.have.className('malibu-fill-gradient-purple')
     expect(wrapper).not.to.have.className('undefined')
     expect(wrapper.find('use')).to.be.present()
@@ -20,16 +19,19 @@ describe('MalibuIcon', () => {
 
   it('correctly applies extra classes', () => {
     const wrapper = shallow(<MalibuIcon name='foo' extraClasses='v-mid'/>)
-    expect(wrapper).to.not.have.prop('style')
     expect(wrapper).to.have.className('malibu-fill-gradient-purple')
     expect(wrapper).to.have.className('v-mid')
     expect(wrapper.find('use')).to.be.present()
     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
   })
 
+  it('correctly applies extra styles', () => {
+    const wrapper = shallow(<MalibuIcon name='foo' style={{ position: 'absolute' }} size={16} />)
+    expect(wrapper).to.have.prop('style').eql({ width: '16px', height: '16px', position: 'absolute' })
+  })
+
   it('displays a gradient fillClass icon', () => {
     const wrapper = shallow(<MalibuIcon name='foo' fillClass='blue'/>)
-    expect(wrapper).to.not.have.prop('style')
     expect(wrapper).to.have.className('malibu-fill-gradient-blue')
     expect(wrapper.find('use')).to.be.present()
     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
@@ -37,7 +39,6 @@ describe('MalibuIcon', () => {
 
   it('displays a purple fillClass icon', () => {
     const wrapper = shallow(<MalibuIcon name='foo' fillClass='fill-washed-blue'/>)
-    expect(wrapper).to.not.have.prop('style')
     expect(wrapper).to.have.className('fill-washed-blue')
     expect(wrapper.find('use')).to.be.present()
     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
