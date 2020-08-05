@@ -48,7 +48,7 @@ By default this will load the product sprites. To load the marketing sprites, ad
 Use this component to instantiate an icon.
 
 ```js
-<MalibuIcon name='add-badge-16' size={20} fillClass='dark-gray' extraClasses='foo bar baz'/>
+<MalibuIcon name='add-badge-16' size={20} fillClass='dark-gray' style={'position': 'fixed'} extraClasses='foo bar baz'/>
 ```
 
 ##### Properties
@@ -62,4 +62,5 @@ Use this component to instantiate an icon.
   - `orange`
   - `green`
   - `blue`
+* **`style`** (optional): an object containing style definitions to apply to the rendered `<svg>` element.
 * **`extraClasses`** (optional): a string containing space-separated classnames to apply to the rendered `<svg>` element.
