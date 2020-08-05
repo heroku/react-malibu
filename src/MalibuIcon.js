@@ -59,21 +59,17 @@ export default class MalibuIcon extends React.Component {
     fillClass: PropTypes.oneOf(purpleGradientFillClasses.concat(purpleFillClasses)),
     name: PropTypes.string.isRequired,
     size: PropTypes.number,
+    style: PropTypes.object,
   }
 
   static defaultProps = {
-    fillClass: 'purple'
+    fillClass: 'purple',
+    style: {}
   }
 
   render () {
-    const { extraClasses, fillClass, name, size } = this.props
-    let style
-    if (size) {
-      style = {
-        width: `${size}px`,
-        height: `${size}px`,
-      }
-    }
+    const { extraClasses, fillClass, name, size, style } = this.props
+    const internalStyle = size ? { width: `${size}px`, height: `${size}px` } : {}
 
     let classNames
     if (purpleGradientFillClasses.includes(fillClass)) {
@@ -87,7 +83,12 @@ export default class MalibuIcon extends React.Component {
     }
 
     return (
-      <svg style={style} className={classNames}><use xlinkHref={`#${name}`}></use></svg>
+      <svg
+        style={{ ...internalStyle, ...style }}
+        className={classNames}
+      >
+        <use xlinkHref={`#${name}`} />
+      </svg>
     )
   }
 }
