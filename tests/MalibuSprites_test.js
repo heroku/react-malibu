@@ -1,14 +1,14 @@
-import chai, { expect } from 'chai'
-import chaiEnzyme from 'chai-enzyme'
+import { expect } from 'chai'
+// import chaiEnzyme from 'chai-enzyme'
 import { describe, it, afterEach } from 'mocha'
 import React from 'react'
-import { shallow } from 'enzyme'
+// import { shallow } from 'enzyme'
 import { render } from '@testing-library/react'
 
 import fetchMock from 'fetch-mock'
 import { MalibuSprites } from '../src/'
 
-chai.use(chaiEnzyme())
+// chai.use(chaiEnzyme())
 
 describe('MalibuSprite', () => {
   const sprites = `
@@ -36,13 +36,13 @@ describe('MalibuSprite', () => {
   })
 
   it('correctly sets the content of sprites when fetched', () => {
-    const wrapper = shallow(<MalibuSprites />)
+    const wrapper = render(<MalibuSprites />)
     wrapper.setState({sprites})
     wrapper.update()
-    expect(wrapper.props().svg).to.equal(sprites)
+    expect(screen.props().svg).to.equal(sprites)
   })
 
   it('does not permit arbitrary set values', () => {
-    expect(() => (shallow(<MalibuSprites name='foo' set='WRONG'/>))).to.throw()
+    expect(() => (render(<MalibuSprites name='foo' set='WRONG'/>))).to.throw()
   })
 })

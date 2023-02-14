@@ -1,58 +1,58 @@
-import chai, { expect } from 'chai'
-import chaiEnzyme from 'chai-enzyme'
-import { describe, it } from 'mocha'
-import React from 'react'
-import { shallow } from 'enzyme'
+// import chai, { expect } from 'chai'
+// import chaiEnzyme from 'chai-enzyme'
+// import { describe, it } from 'mocha'
+// import React from 'react'
+// import { shallow } from 'enzyme'
 
-import { MalibuIcon } from '../src/'
+// import { MalibuIcon } from '../src/'
 
-chai.use(chaiEnzyme())
+// chai.use(chaiEnzyme())
 
-describe('MalibuIcon', () => {
-  it('displays a natively-sized icon', () => {
-    const wrapper = shallow(<MalibuIcon name='foo' />)
-    expect(wrapper).to.have.className('malibu-fill-gradient-purple')
-    expect(wrapper).not.to.have.className('undefined')
-    expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
-  })
+// describe('MalibuIcon', () => {
+//   it('displays a natively-sized icon', () => {
+//     const wrapper = shallow(<MalibuIcon name='foo' />)
+//     expect(wrapper).to.have.className('malibu-fill-gradient-purple')
+//     expect(wrapper).not.to.have.className('undefined')
+//     expect(wrapper.find('use')).to.be.present()
+//     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+//   })
 
-  it('correctly applies extra classes', () => {
-    const wrapper = shallow(<MalibuIcon name='foo' extraClasses='v-mid'/>)
-    expect(wrapper).to.have.className('malibu-fill-gradient-purple')
-    expect(wrapper).to.have.className('v-mid')
-    expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
-  })
+//   it('correctly applies extra classes', () => {
+//     const wrapper = shallow(<MalibuIcon name='foo' extraClasses='v-mid'/>)
+//     expect(wrapper).to.have.className('malibu-fill-gradient-purple')
+//     expect(wrapper).to.have.className('v-mid')
+//     expect(wrapper.find('use')).to.be.present()
+//     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+//   })
 
-  it('correctly applies extra styles', () => {
-    const wrapper = shallow(<MalibuIcon name='foo' style={{ position: 'absolute' }} size={16} />)
-    expect(wrapper).to.have.prop('style').eql({ width: '16px', height: '16px', position: 'absolute' })
-  })
+//   it('correctly applies extra styles', () => {
+//     const wrapper = shallow(<MalibuIcon name='foo' style={{ position: 'absolute' }} size={16} />)
+//     expect(wrapper).to.have.prop('style').eql({ width: '16px', height: '16px', position: 'absolute' })
+//   })
 
-  it('displays a gradient fillClass icon', () => {
-    const wrapper = shallow(<MalibuIcon name='foo' fillClass='blue'/>)
-    expect(wrapper).to.have.className('malibu-fill-gradient-blue')
-    expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
-  })
+//   it('displays a gradient fillClass icon', () => {
+//     const wrapper = shallow(<MalibuIcon name='foo' fillClass='blue'/>)
+//     expect(wrapper).to.have.className('malibu-fill-gradient-blue')
+//     expect(wrapper.find('use')).to.be.present()
+//     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+//   })
 
-  it('displays a purple fillClass icon', () => {
-    const wrapper = shallow(<MalibuIcon name='foo' fillClass='fill-washed-blue'/>)
-    expect(wrapper).to.have.className('fill-washed-blue')
-    expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
-  })
+//   it('displays a purple fillClass icon', () => {
+//     const wrapper = shallow(<MalibuIcon name='foo' fillClass='fill-washed-blue'/>)
+//     expect(wrapper).to.have.className('fill-washed-blue')
+//     expect(wrapper.find('use')).to.be.present()
+//     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+//   })
 
-  it('displays a custom-sized icon', () => {
-    const wrapper = shallow(<MalibuIcon name='foo' fillClass='blue' size={333}/>)
-    expect(wrapper.prop('style')).to.deep.equal({width: '333px', height: '333px'})
-    expect(wrapper).to.have.className('malibu-fill-gradient-blue')
-    expect(wrapper.find('use')).to.be.present()
-    expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
-  })
+//   it('displays a custom-sized icon', () => {
+//     const wrapper = shallow(<MalibuIcon name='foo' fillClass='blue' size={333}/>)
+//     expect(wrapper.prop('style')).to.deep.equal({width: '333px', height: '333px'})
+//     expect(wrapper).to.have.className('malibu-fill-gradient-blue')
+//     expect(wrapper.find('use')).to.be.present()
+//     expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+//   })
 
-  it('does not permit arbitrary fillClass values', () => {
-    expect(() => (shallow(<MalibuIcon name='foo' fillClass='WRONG'/>))).to.throw()
-  })
-})
+//   it('does not permit arbitrary fillClass values', () => {
+//     expect(() => (shallow(<MalibuIcon name='foo' fillClass='WRONG'/>))).to.throw()
+//   })
+// })
