@@ -23,10 +23,13 @@ describe('MalibuIcon', () => {
     expect(malibuExtraClass.length).to.equal(1)
   })
 
-  // it('correctly applies extra styles', () => {
-  //   const wrapper = render(<MalibuIcon name='foo' style={{ position: 'absolute' }} size={16} />)
-  //   expect(wrapper).to.have.prop('style').eql({ width: '16px', height: '16px', position: 'absolute' })
-  // })
+  it('correctly applies extra styles', () => {
+    const {container} = render(<MalibuIcon name='foo' style={{ position: 'absolute' }} size={16} />)
+    const malibuProps = Object.values(container.getElementsByTagName('svg')[0])[1]
+    expect(malibuProps.style.width).to.equal('16px')
+    expect(malibuProps.style.height).to.equal('16px')
+    expect(malibuProps.style.position).to.equal('absolute')
+  })
 
   it('displays a gradient fillClass icon', () => {
     const {container} = render(<MalibuIcon name='foo' fillClass='blue'/>)
@@ -43,10 +46,10 @@ describe('MalibuIcon', () => {
   it('displays a custom-sized icon', () => {
     const {container} = render(<MalibuIcon name='foo' fillClass='blue' size={333}/>)
     const malibuClass = container.getElementsByClassName('malibu-fill-gradient-blue')
-    const malibuSize = Object.values(container.getElementsByTagName('svg')[0])[1]
+    const malibuProps = Object.values(container.getElementsByTagName('svg')[0])[1]
     expect(malibuClass.length).to.equal(1)
-    expect(malibuSize.style.width).to.equal('333px')
-    expect(malibuSize.style.height).to.equal('333px')
+    expect(malibuProps.style.width).to.equal('333px')
+    expect(malibuProps.style.height).to.equal('333px')
   })
 
   it('does not permit arbitrary fillClass values', () => {
