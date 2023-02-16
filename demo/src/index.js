@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client';
 import difference from 'lodash.difference'
 
 import { MalibuSprites, MalibuIcon } from '../../src'
@@ -101,4 +101,5 @@ cssLink.type = 'text/css'
 cssLink.rel = 'stylesheet'
 head.appendChild(cssLink)
 
-render(<Demo/>, document.querySelector('#demo'))
+const root = createRoot(document.querySelector('#demo'));
+root.render(<Demo/>)
