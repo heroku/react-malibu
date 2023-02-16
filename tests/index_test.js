@@ -4,11 +4,6 @@ import { beforeEach, before, after } from 'mocha'
 import sinon from 'sinon'
 import { jsdom } from 'jsdom'
 
-// import Enzyme from 'enzyme'
-// import Adapter from 'enzyme-adapter-react-16'
-
-// Enzyme.configure({ adapter: new Adapter() })
-
 // Since react will console.error propType warnings, that which we'd rather have
 // as errors, we use sinon.js to stub it into throwing these warning as errors
 // instead.
