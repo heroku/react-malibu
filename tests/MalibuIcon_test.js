@@ -40,13 +40,23 @@ describe('MalibuIcon', () => {
     expect(malibuClass.length).to.equal(1)
   })
 
-  // it('displays a custom-sized icon', () => {
-  //   const wrapper = render(<MalibuIcon name='foo' fillClass='blue' size={333}/>)
-  //   expect(wrapper.prop('style')).to.deep.equal({width: '333px', height: '333px'})
-  //   expect(wrapper).to.have.className('malibu-fill-gradient-blue')
-  //   expect(wrapper.find('use')).to.be.present()
-  //   expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
-  // })
+  it('displays a custom-sized icon', () => {
+    // const wrapper = render(<MalibuIcon name='foo' fillClass='blue' size={333}/>)
+    // expect(wrapper.prop('style')).to.deep.equal({width: '333px', height: '333px'})
+    // expect(wrapper).to.have.className('malibu-fill-gradient-blue')
+    // expect(wrapper.find('use')).to.be.present()
+    // expect(wrapper.find('use')).to.have.prop('xlinkHref').equal('#foo')
+
+    const {container} = render(<MalibuIcon name='foo' fillClass='blue' size={333}/>)
+    const malibuClass = container.getElementsByClassName('malibu-fill-gradient-blue')
+    const malibuSize = container.getElementsByTagName('svg')[0]
+
+    const values = Object.values(malibuSize)
+    console.log('values: ', values[1].style)
+    // console.log('contents: ', malibuClass)
+
+    expect(malibuClass.length).to.equal(1)
+  })
 
   it('does not permit arbitrary fillClass values', () => {
     expect(() => (render(<MalibuIcon name='foo' fillClass='WRONG'/>))).to.throw()
