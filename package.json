@@ -17,8 +17,7 @@
     "clean": "nwb clean-module && npm clean-demo",
     "start": "nwb serve-react-demo",
     "test": "yarn run lint && yarn run mocha -- --require jsdom-global/register --require babel-register tests/*_test.js",
-    "lint": "yarn run eslint .",
-    "release": "np"
+    "lint": "yarn run eslint ."
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
