@@ -87,7 +87,7 @@ export default class MalibuIcon extends React.Component {
         style={{ ...internalStyle, ...style }}
         className={classNames}
       >
-        <use xlinkHref={`#${name}`} />
+        <use xlinkHref={`#${name}`} data-testid={`test-xlinkHref-name-${name}`} />
       </svg>
     )
   }
