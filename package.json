@@ -1,6 +1,6 @@
 {
   "name": "@heroku/react-malibu",
-  "version": "4.3.0",
+  "version": "5.0.1",
   "description": "React components for Heroku's Malibu SVG icon system",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -17,8 +17,7 @@
     "clean": "nwb clean-module && npm clean-demo",
     "start": "nwb serve-react-demo",
     "test": "yarn run lint && yarn run mocha -- --require jsdom-global/register --require babel-register tests/*_test.js",
-    "lint": "yarn run eslint .",
-    "release": "np"
+    "lint": "yarn run eslint ."
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
@@ -31,13 +30,11 @@
     "react-dom": "15.x"
   },
   "devDependencies": {
+    "@testing-library/react": "^13.4.0",
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.1",
     "babel-register": "^6.24.0",
     "chai": "^3.5.0",
-    "chai-enzyme": "^1.0.0-beta.1",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.0",
     "eslint-plugin-import": "^2.2.0",
@@ -53,9 +50,9 @@
     "mocha": "^3.2.0",
     "np": "^2.16.0",
     "nwb": "^0.18.8",
-    "react": "^16.6.3",
+    "react": "^18.2.0",
     "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.6.3",
+    "react-dom": "^18.2.0",
     "sinon": "^2.1.0"
   },
   "author": "Idan Gazit <idan@heroku.com>",
