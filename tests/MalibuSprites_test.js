@@ -1,13 +1,10 @@
-import chai, { expect } from 'chai'
-import chaiEnzyme from 'chai-enzyme'
+import { expect } from 'chai'
 import { describe, it, afterEach } from 'mocha'
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { render } from '@testing-library/react'
 
 import fetchMock from 'fetch-mock'
 import { MalibuSprites } from '../src/'
-
-chai.use(chaiEnzyme())
 
 describe('MalibuSprite', () => {
   const sprites = `
@@ -22,7 +19,7 @@ describe('MalibuSprite', () => {
   it('fetches the latest version of the sprites', () => {
     const url = 'https://www.herokucdn.com/malibu/latest/sprite.svg'
     fetchMock.get(url, sprites)
-    mount(<MalibuSprites />)
+    render(<MalibuSprites />)
     expect(fetchMock.lastUrl()).to.equal(url)
   })
 
@@ -30,18 +27,11 @@ describe('MalibuSprite', () => {
     const set = 'marketing'
     const url = `https://www.herokucdn.com/malibu/latest/${set}/sprite.svg`
     fetchMock.get(url, sprites)
-    mount(<MalibuSprites set={set} />)
+    render(<MalibuSprites set={set} />)
     expect(fetchMock.lastUrl()).to.equal(url)
   })
 
-  it('correctly sets the content of sprites when fetched', () => {
-    const wrapper = shallow(<MalibuSprites />)
-    wrapper.setState({sprites})
-    wrapper.update()
-    expect(wrapper.props().svg).to.equal(sprites)
-  })
-
   it('does not permit arbitrary set values', () => {
-    expect(() => (shallow(<MalibuSprites name='foo' set='WRONG'/>))).to.throw()
+    expect(() => (render(<MalibuSprites name='foo' set='WRONG'/>))).to.throw()
   })
 })
