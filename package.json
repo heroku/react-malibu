@@ -55,7 +55,7 @@
     "react-dom": "^18.2.0",
     "sinon": "^2.1.0"
   },
-  "author": "Idan Gazit <idan@heroku.com>",
+  "author": "Heroku",
   "homepage": "https://github.com/heroku/react-malibu",
   "license": "SEE LICENSE IN LICENSE.txt",
   "keywords": [
