@@ -41,7 +41,7 @@
     "eslint-plugin-mocha": "^4.9.0",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-standard": "^3.0.1",
     "fetch-mock": "^5.9.4",
     "jsdom": "^9.12.0",
