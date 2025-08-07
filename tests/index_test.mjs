@@ -1,9 +1,9 @@
-require('@babel/register')
-require('core-js/stable')
-const mocha = require('mocha')
-const { beforeEach, before, after } = mocha
-const sinon = require('sinon')
-const { JSDOM } = require('jsdom')
+// ES Module setup for tests
+import '@babel/register'
+import 'core-js/stable/index.js'
+import { beforeEach, before, after } from 'mocha'
+import sinon from 'sinon'
+import { JSDOM } from 'jsdom'
 
 // Since react will console.error propType warnings, that which we'd rather have
 // as errors, we use sinon.js to stub it into throwing these warning as errors

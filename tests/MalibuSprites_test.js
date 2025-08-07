@@ -1,10 +1,10 @@
-import { expect } from 'chai'
-import { describe, it, afterEach } from 'mocha'
-import React from 'react'
-import { render } from '@testing-library/react'
+const { expect } = require('chai')
+const { describe, it, afterEach } = require('mocha')
+const React = require('react')
+const { render } = require('@testing-library/react')
 
-import fetchMock from 'fetch-mock'
-import { MalibuSprites } from '../src/'
+const fetchMock = require('fetch-mock')
+const { MalibuSprites } = require('../lib/')
 
 describe('MalibuSprite', () => {
   const sprites = `

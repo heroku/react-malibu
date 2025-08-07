@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": ["standard", "plugin:react/recommended"],
   "plugins": [
       "standard",
@@ -8,6 +8,10 @@
       "mocha"
   ],
   "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    },
     "ecmaFeatures": {
       "jsx": true,
       "classes": true
