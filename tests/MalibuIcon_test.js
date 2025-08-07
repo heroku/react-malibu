@@ -4,7 +4,7 @@ const React = require('react')
 const { render } = require('@testing-library/react')
 const { screen } = require('@testing-library/dom')
 
-const { MalibuIcon } = require('../lib/')
+const { MalibuIcon } = require('../dist/')
 
 describe('MalibuIcon', () => {
   it('displays a natively-sized icon', () => {

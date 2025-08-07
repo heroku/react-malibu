@@ -4,4 +4,6 @@
 /lib
 /node_modules
 /umd
-nwb.config.js
+/dist
+/dist-demo
+vite.config.js
