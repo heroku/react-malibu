@@ -2,16 +2,16 @@
   "name": "@heroku/react-malibu",
   "version": "5.0.2",
   "description": "React components for Heroku's Malibu SVG icon system",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
   "repository": "https://github.com/heroku/react-malibu",
   "files": [
-    "dist"
+    "lib"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
     }
   },
   "scripts": {
@@ -21,7 +21,7 @@
     "start": "yarn build && vite --config demo/vite.config.js",
     "dev:demo": "vite --config demo/vite.config.js",
     "preview": "vite preview",
-    "clean": "rm -rf dist dist-demo",
+    "clean": "rm -rf lib dist dist-demo",
     "test": "yarn run lint && yarn run mocha -- --require jsdom-global/register --require @babel/register tests/*_test.js",
     "lint": "yarn run eslint ."
   },

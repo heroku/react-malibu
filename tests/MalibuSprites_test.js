@@ -4,7 +4,7 @@ const React = require('react')
 const { render } = require('@testing-library/react')
 
 const fetchMock = require('fetch-mock')
-const { MalibuSprites } = require('../dist/')
+const { MalibuSprites } = require('../lib/')
 
 describe('MalibuSprite', () => {
   const sprites = `

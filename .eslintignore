@@ -4,6 +4,4 @@
 /lib
 /node_modules
 /umd
-/dist
-/dist-demo
 vite.config.js

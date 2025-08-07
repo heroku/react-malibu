@@ -14,7 +14,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, '../src'),
-      'react-malibu': resolve(__dirname, '../dist/index.mjs')
+      'react-malibu': resolve(__dirname, '../lib/index.mjs')
     }
   }
 }) 

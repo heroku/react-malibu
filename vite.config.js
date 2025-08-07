@@ -11,6 +11,8 @@ export default defineConfig({
     libInjectCss(),
   ],
   build: {
+    outDir: 'lib',
+    emptyOutDir: true,
     lib: {
       entry: resolve(__dirname, 'src/index.jsx'),
       name: 'ReactMalibu',
