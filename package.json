@@ -3,20 +3,26 @@
   "version": "5.0.2",
   "description": "React components for Heroku's Malibu SVG icon system",
   "main": "lib/index.js",
-  "module": "es/index.js",
+  "module": "lib/index.mjs",
   "repository": "https://github.com/heroku/react-malibu",
   "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
+    "lib"
   ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    }
+  },
   "scripts": {
     "prepublish": "yarn build",
-    "build": "NODE_OPTIONS='--openssl-legacy-provider' nwb build-react-component",
-    "clean": "nwb clean-module && npm clean-demo",
-    "start": "NODE_OPTIONS='--openssl-legacy-provider' nwb serve-react-demo",
-    "test": "yarn run lint && NODE_OPTIONS='--openssl-legacy-provider' yarn run mocha -- --require jsdom-global/register --require @babel/register tests/*_test.js",
+    "build": "vite build",
+    "dev": "vite",
+    "start": "yarn build && vite --config demo/vite.config.js",
+    "dev:demo": "vite --config demo/vite.config.js",
+    "preview": "vite preview",
+    "clean": "rm -rf lib dist dist-demo",
+    "test": "yarn run lint && yarn run mocha -- --require jsdom-global/register --require @babel/register tests/*_test.js",
     "lint": "yarn run eslint ."
   },
   "dependencies": {
@@ -36,6 +42,7 @@
     "@babel/preset-react": "^7.23.0",
     "@babel/register": "^7.23.0",
     "@testing-library/react": "^13.4.0",
+    "@vitejs/plugin-react": "^5.0.0",
     "chai": "^4.3.10",
     "core-js": "^3.35.0",
     "eslint": "^8.57.0",
@@ -54,10 +61,12 @@
     "mocha": "^11.7.1",
     "node-fetch": "^2.7.0",
     "np": "^10.2.0",
-    "nwb": "^0.25.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sinon": "^21.0.0"
+    "sinon": "^21.0.0",
+    "vite": "^7.1.0",
+    "vite-plugin-externals": "^0.6.2",
+    "vite-plugin-lib-inject-css": "^2.2.2"
   },
   "author": "Heroku",
   "homepage": "https://github.com/heroku/react-malibu",
