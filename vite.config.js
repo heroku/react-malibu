@@ -13,6 +13,7 @@ export default defineConfig({
   build: {
     outDir: 'lib',
     emptyOutDir: true,
+    target: 'es2015', // Target ES2015 for better compatibility
     lib: {
       entry: resolve(__dirname, 'src/index.jsx'),
       name: 'ReactMalibu',
@@ -20,12 +21,14 @@ export default defineConfig({
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'prop-types'],
+      external: ['react', 'react-dom', 'prop-types', 'react-svg-inline', 'whatwg-fetch'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          'prop-types': 'PropTypes'
+          'prop-types': 'PropTypes',
+          'react-svg-inline': 'SVGInline',
+          'whatwg-fetch': 'fetch'
         }
       }
     }
