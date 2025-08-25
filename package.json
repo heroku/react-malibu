@@ -3,17 +3,10 @@
   "version": "5.0.2",
   "description": "React components for Heroku's Malibu SVG icon system",
   "main": "lib/index.js",
-  "module": "lib/index.mjs",
   "repository": "https://github.com/heroku/react-malibu",
   "files": [
     "lib"
   ],
-  "exports": {
-    ".": {
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.js"
-    }
-  },
   "scripts": {
     "prepublish": "yarn build",
     "build": "vite build",

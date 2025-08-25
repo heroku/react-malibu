@@ -6,7 +6,6 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [
     react({
-      jsxRuntime: 'automatic',
       babel: {
         // Configure Babel for compatibility with older minifiers like UglifyJS 2.x
         presets: [
@@ -34,12 +33,18 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.jsx'),
       name: 'ReactMalibu',
-      formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`
+      formats: ['cjs'],
+      fileName: () => 'index.js'
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'prop-types', 'react-svg-inline', 'whatwg-fetch'],
       output: {
+        format: 'cjs',
+        exports: 'named',
+        // Ensure proper CommonJS exports for React 16 compatibility
+        interop: 'compat',
+        // Add __esModule flag for proper interop
+        banner: 'Object.defineProperty(exports, "__esModule", { value: true });',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
