@@ -5,15 +5,12 @@ import baseConfig from '../vite.config'
 
 export default defineConfig(mergeConfig(baseConfig, {
   root: 'demo',
-  build: {
-    outDir: '../dist-demo'
-  },
   server: {
     port: 3002
   },
   resolve: {
     alias: {
-      '@heroku/react-malibu': resolve(__dirname, '../src')
+      '@heroku/react-malibu': resolve(__dirname, '../src'),
     }
   }
 }))
