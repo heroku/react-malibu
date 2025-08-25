@@ -6,12 +6,14 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [
     react({
+      jsxRuntime: 'classic', // React 16 compatibility
+      jsxImportSource: 'react',
       babel: {
-        // Configure Babel for compatibility with older minifiers like UglifyJS 2.x
+        // ES5 transpilation for UglifyJs 2.0.1 compatibility
         presets: [
           ['@babel/preset-env', {
             targets: {
-              browsers: ['> 1%', 'last 2 versions', 'ie >= 9']
+              ie: '9'
             },
             modules: false,
             loose: true,
@@ -41,20 +43,18 @@ export default defineConfig({
       output: {
         format: 'cjs',
         exports: 'named',
-        // Ensure proper CommonJS exports for React 16 compatibility
         interop: 'compat',
-        // Add __esModule flag for proper interop
         banner: 'Object.defineProperty(exports, "__esModule", { value: true });',
+        // Force ES5-compatible wrapper code generation
+        generatedCode: 'es5',
+        compact: false,
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
           'prop-types': 'PropTypes',
           'react-svg-inline': 'SVGInline',
           'whatwg-fetch': 'fetch'
-        },
-        // Generate code compatible with older minifiers
-        generatedCode: 'es2015',
-        compact: false
+        }
       }
     }
   }
