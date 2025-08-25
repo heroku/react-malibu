@@ -2,7 +2,7 @@ import React from 'react'
 import { createRoot } from 'react-dom/client';
 import { difference } from 'lodash'
 
-import { MalibuSprites, MalibuIcon } from 'react-malibu'
+import { MalibuSprites, MalibuIcon } from '@heroku/react-malibu'
 
 class Demo extends React.Component {
   state = {

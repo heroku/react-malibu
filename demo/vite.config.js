@@ -13,8 +13,7 @@ export default defineConfig(mergeConfig(baseConfig, {
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, '../src'),
-      'react-malibu': resolve(__dirname, '../lib/index.js')
+      '@heroku/react-malibu': resolve(__dirname, '../src')
     }
   }
 }))
