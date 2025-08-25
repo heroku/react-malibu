@@ -6,14 +6,31 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [
     react({
-      jsxRuntime: 'automatic'
+      jsxRuntime: 'automatic',
+      babel: {
+        // Configure Babel for compatibility with older minifiers like UglifyJS 2.x
+        presets: [
+          ['@babel/preset-env', {
+            targets: {
+              browsers: ['> 1%', 'last 2 versions', 'ie >= 9']
+            },
+            modules: false,
+            loose: true,
+            useBuiltIns: false
+          }]
+        ],
+        plugins: [
+          ['@babel/plugin-transform-class-properties', { loose: true }],
+          ['@babel/plugin-transform-object-rest-spread', { useBuiltIns: true }]
+        ]
+      }
     }),
     libInjectCss(),
   ],
   build: {
     outDir: 'lib',
     emptyOutDir: true,
-    target: 'es2015', // Target ES2015 for better compatibility
+    target: 'es2015',
     lib: {
       entry: resolve(__dirname, 'src/index.jsx'),
       name: 'ReactMalibu',
@@ -29,7 +46,10 @@ export default defineConfig({
           'prop-types': 'PropTypes',
           'react-svg-inline': 'SVGInline',
           'whatwg-fetch': 'fetch'
-        }
+        },
+        // Generate code compatible with older minifiers
+        generatedCode: 'es2015',
+        compact: false
       }
     }
   }
