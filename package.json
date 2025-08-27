@@ -3,23 +3,16 @@
   "version": "5.0.2",
   "description": "React components for Heroku's Malibu SVG icon system",
   "main": "lib/index.js",
-  "module": "lib/index.mjs",
   "repository": "https://github.com/heroku/react-malibu",
   "files": [
     "lib"
   ],
-  "exports": {
-    ".": {
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.js"
-    }
-  },
   "scripts": {
     "prepublish": "yarn build",
     "build": "vite build",
     "dev": "vite",
     "start": "yarn build && vite --config demo/vite.config.js",
-    "dev:demo": "vite --config demo/vite.config.js",
+    "dev:demo": "vite --force --config demo/vite.config.js",
     "preview": "vite preview",
     "clean": "rm -rf lib dist dist-demo",
     "test": "yarn run lint && yarn run mocha -- --require jsdom-global/register --require @babel/register tests/*_test.js",
@@ -38,6 +31,10 @@
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.0",
     "@babel/eslint-parser": "^7.23.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-transform-class-properties": "^7.27.1",
+    "@babel/plugin-transform-object-rest-spread": "^7.28.0",
     "@babel/preset-env": "^7.23.0",
     "@babel/preset-react": "^7.23.0",
     "@babel/register": "^7.23.0",
