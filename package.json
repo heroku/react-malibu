@@ -76,6 +76,7 @@
     "react-component"
   ],
   "resolutions": {
-    "ansi-regex": "^3.0.1"
+    "ansi-regex": "^3.0.1",
+    "tmp": "^0.2.4"
   }
 }
