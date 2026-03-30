@@ -76,6 +76,15 @@
     "react-component"
   ],
   "resolutions": {
-    "ansi-regex": "^3.0.1"
+    "ansi-regex": "^3.0.1",
+    "eslint/**/minimatch": "^3.1.4",
+    "glob/**/minimatch": "^3.1.4",
+    "@babel/cli/**/minimatch": "^3.1.4",
+    "eslint-plugin-node/**/minimatch": "^3.1.4",
+    "eslint-plugin-import/**/minimatch": "^3.1.4",
+    "eslint-plugin-n/**/minimatch": "^3.1.4",
+    "eslint-plugin-react/**/minimatch": "^3.1.4",
+    "mocha/**/minimatch": "^9.0.7",
+    "np/**/minimatch": "^9.0.7"
   }
 }
