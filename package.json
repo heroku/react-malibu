@@ -85,6 +85,7 @@
     "eslint-plugin-n/**/minimatch": "^3.1.4",
     "eslint-plugin-react/**/minimatch": "^3.1.4",
     "mocha/**/minimatch": "^9.0.7",
-    "np/**/minimatch": "^9.0.7"
+    "np/**/minimatch": "^9.0.7",
+    "serialize-javascript": ">=7.0.3"
   }
 }
